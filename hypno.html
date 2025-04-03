@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ipnotico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Video di sfondo */
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            animation: videoEffect 3s infinite alternate;
+        }
+
+        /* Animazione ipnotica */
+        @keyframes videoEffect {
+            0% { filter: brightness(100%); }
+            50% { filter: brightness(120%); }
+            100% { filter: brightness(100%); }
+        }
+
+        /* Messaggi subliminali */
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2rem;
+            opacity: 0;
+            animation: showMessage 5s infinite;
+        }
+
+        @keyframes showMessage {
+            0%, 100% { opacity: 0; }
+            25%, 75% { opacity: 1; }
+        }
+
+        /* Vibrazione mobile */
+        @media (pointer: coarse) {
+            body:active {
+                animation: vibrate 0.1s linear infinite;
+            }
+        }
+
+        @keyframes vibrate {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(5px); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Video di sfondo -->
+    <video autoplay muted loop class="background-video">
+        <source src="https://drive.google.com/file/d/1TVNp2Osjzuzy8itK1EKXiVN9R2-zKiJg/view?usp=sharing" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
+
+    <!-- Messaggio subliminale -->
+    <div class="message">
+        <p>Lasciati andare...</p>
+    </div>
+
+    <script>
+        // Aggiungi vibrazione su click
+        document.body.addEventListener("click", function() {
+            navigator.vibrate([100, 100, 100]);  // Vibrazione breve
+        });
+    </script>
+
+</body>
+</html>
